@@ -1,6 +1,6 @@
 const mainCanvas = document.getElementById("main-canvas");
 
-const canvasData = {
+let canvasData = {
   canvasHeight: 500,
   canvasWidth: 1000,
   backgroundColor: "#000000",
@@ -45,7 +45,14 @@ const canvasData = {
   ],
 };
 
-function draw() {
+function paintCanvas(height, width, backgroundColor, canvasDraw) {
+  height ? (canvasData.canvasHeight = height) : canvasData.canvasHeight;
+  width ? (canvasData.canvasWidth = width) : canvasData.canvasWidth;
+  backgroundColor
+    ? (canvasData.backgroundColor = backgroundColor)
+    : canvasData.backgroundColor;
+  canvasDraw ? (canvasData.canvasDraw = canvasDraw) : canvasData.canvasDraw;
+
   if (mainCanvas.getContext) {
     const ctx = mainCanvas.getContext("2d");
     mainCanvas.width = canvasData.canvasWidth;
@@ -65,4 +72,9 @@ function draw() {
   }
 }
 
-draw();
+paintCanvas();
+
+function updateCanvasDraw(data) {
+  canvasData.canvasDraw = data;
+  paintCanvas();
+}
