@@ -78,3 +78,44 @@ function updateCanvasDraw(data) {
   canvasData.canvasDraw = data;
   paintCanvas();
 }
+
+setInterval(() => {
+  updateCanvasDraw([
+    {
+      x: 105,
+      y: 100,
+      width: 100,
+      height: 200,
+      penColor: "#FEFDED",
+      penSize: 5,
+      fillColor: "#FA7070",
+    },
+    {
+      x: 205,
+      y: 100,
+      width: 300,
+      height: 100,
+      penColor: "#FEFDED",
+      penSize: 5,
+      fillColor: "#A5DD9B",
+    },
+    {
+      x: 205,
+      y: 200,
+      width: 150,
+      height: 100,
+      penColor: "#FEFDED",
+      penSize: 5,
+      fillColor: "#FA7070",
+    },
+    {
+      x: 355,
+      y: 200,
+      width: 150,
+      height: 100,
+      penColor: "#FEFDED",
+      penSize: 5,
+      fillColor: "#A5DD9B",
+    },
+  ]);
+}, 5000);
